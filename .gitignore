@@ -2,3 +2,5 @@
 .*.swp
 *console.log
 .vagrant/
+box/
+binary/
