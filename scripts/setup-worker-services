@@ -31,6 +31,8 @@ cp /vagrant/tools/runc /usr/local/bin/
 cp /vagrant/tools/{crio,kube-proxy,kubelet,kubectl} /usr/local/bin/
 cp /vagrant/tools/{conmon,pause} /usr/local/libexec/crio/
 cp /vagrant/tools/{crio.conf,seccomp.json} /etc/crio/
+sed -i 's/\/usr\/bin\/runc/\/usr\/local\/bin\/runc/g'  crio.conf
+
 cp /vagrant/tools/policy.json /etc/containers/
 
 cp "/vagrant/config/$(hostname)-10-bridge.conf" /etc/cni/net.d/10-bridge.conf
@@ -53,3 +55,4 @@ systemctl enable crio kubelet kube-proxy
 systemctl start crio kubelet kube-proxy
 EOF
 done
+
