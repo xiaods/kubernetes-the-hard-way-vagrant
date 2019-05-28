@@ -31,7 +31,7 @@ cp /vagrant/tools/runc /usr/local/bin/
 cp /vagrant/tools/{crio,kube-proxy,kubelet,kubectl} /usr/local/bin/
 cp /vagrant/tools/{conmon,pause} /usr/local/libexec/crio/
 cp /vagrant/tools/{crio.conf,seccomp.json} /etc/crio/
-sed -i 's/\/usr\/bin\/runc/\/usr\/local\/bin\/runc/g'  crio.conf
+sed -i 's/\/usr\/bin\/runc/\/usr\/local\/bin\/runc/g'  /etc/crio/crio.conf
 
 cp /vagrant/tools/policy.json /etc/containers/
 
