@@ -1,4 +1,4 @@
-1. Kubernetes 环境安装
+Kubernetes 环境安装
 =====================
 注意：如果环境启动过程中出现问题，请参考https://github.com/xiaods/kubernetes-the-hard-way-vagrant/README。已经在MacOS下验证。
 
@@ -8,7 +8,7 @@ https://www.virtualbox.org/wiki/Downloads
 
 =====================
 
-Vagrant 
+Vagrant
 https://www.vagrantup.com/downloads.html
 
 
@@ -22,11 +22,11 @@ vagrant box add ./box/bionic-server-cloudimg-amd64-vagrant.box --name ubuntu/bio
 集群环境代码：
 https://github.com/xiaods/kubernetes-the-hard-way-vagrant
 
-  readonly k8s_version="v1.14.2"                                                 
-  readonly etcd_version="v3.3.9"                                                 
-  readonly cfssl_version="R1.2"                                                  
-  readonly traefik_version="v1.3.8"                                              
-  readonly crio_version="v1.14.0" 
+  readonly k8s_version="v1.14.2"
+  readonly etcd_version="v3.3.9"
+  readonly cfssl_version="R1.2"
+  readonly traefik_version="v1.3.8"
+  readonly crio_version="v1.14.0"
 
 
 需要的软件二进制，下载，放到binary目录
@@ -51,18 +51,22 @@ https://github.com/containous/traefik/releases/download/v1.3.8/traefik_linux-amd
 ====================
 前置环境要求：
 Requirements Host
+```
 Vagrant (with VirtualBox)
 Minimum of 7x 512MB of free RAM
-cfssl, cfssljson and kubectl (scripts/install-tools can be used to download and install the binaries to /usr/local/bin) 
+cfssl, cfssljson and kubectl (scripts/install-tools can be used to download and install the binaries to /usr/local/bin)
+```
 
 安装步骤：
+```
 git clone https://github.com/xiaods/kubernetes-the-hard-way-vagrant.git
 cd kubernetes-the-hard-way-vagrant
 vagrant destroy -f   # remove previous setup
 ./scripts/setup      # takes about 5 minutes or more
-
+```
 
 测试：
+```
 kubectl create -f ./manifests/kube-dns.yaml
 [...]
 kubectl get pods -l k8s-app=kube-dns -n kube-system
@@ -81,10 +85,10 @@ for i in {0..2}; do curl -sS 192.168.199.2${i}:${NODE_PORT} | awk '/<h1>/{gsub("
 Welcome to nginx!
 Welcome to nginx!
 Welcome to nginx!
-
-
+```
 ====================
 注意事情:
+
 1. cfssl下载包在macos有兼容问题无法使用，请使用brew覆盖安装
 brew install cfssl
 Bug细节：
