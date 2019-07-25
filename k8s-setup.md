@@ -1,6 +1,10 @@
 Kubernetes 环境安装
 =====================
-注意：如果环境启动过程中出现问题，请参考https://github.com/xiaods/kubernetes-the-hard-way-vagrant/README。已经在MacOS下验证。
+注意：如果环境启动过程中出现问题，请参考
+
+https://github.com/xiaods/kubernetes-the-hard-way-vagrant/README。
+
+已经在MacOS下验证。
 
 
 Virtualbox  v6.0
@@ -17,9 +21,10 @@ Linux镜像：
 
 vagrant box add ./box/bionic-server-cloudimg-amd64-vagrant.box --name ubuntu/bionic64
 
-
 =====================
 集群环境代码：
+
+```
 https://github.com/xiaods/kubernetes-the-hard-way-vagrant
 
   readonly k8s_version="v1.14.2"
@@ -27,10 +32,12 @@ https://github.com/xiaods/kubernetes-the-hard-way-vagrant
   readonly cfssl_version="R1.2"
   readonly traefik_version="v1.3.8"
   readonly crio_version="v1.14.0"
+```
 
 
 需要的软件二进制，下载，放到binary目录
 
+```
 https://storage.googleapis.com/kubernetes-release/release/v1.14.2/bin/linux/amd64/kube-apiserver
 https://storage.googleapis.com/kubernetes-release/release/v1.14.2/bin/linux/amd64/kube-controller-manager
 https://storage.googleapis.com/kubernetes-release/release/v1.14.2/bin/linux/amd64/kube-scheduler
@@ -38,19 +45,19 @@ https://storage.googleapis.com/kubernetes-release/release/v1.14.2/bin/linux/amd6
 https://storage.googleapis.com/kubernetes-release/release/v1.14.2/bin/linux/amd64/kubelet
 https://storage.googleapis.com/kubernetes-release/release/v1.14.2/bin/linux/amd64/kubectl
 
-
 https://github.com/coreos/etcd/releases/download/v3.3.9/etcd-v3.3.9-linux-amd64.tar.gz
-
 
 https://github.com/containernetworking/plugins/releases/download/v0.6.0/cni-plugins-amd64-v0.6.0.tgz
 https://github.com/opencontainers/runc/releases/download/v1.0.0-rc4/runc.amd64
 https://files.schu.io/pub/cri-o/crio-amd64-v1.14.0.tar.gz
 
 https://github.com/containous/traefik/releases/download/v1.3.8/traefik_linux-amd64
+```
 
 ====================
 前置环境要求：
 Requirements Host
+
 ```
 Vagrant (with VirtualBox)
 Minimum of 7x 512MB of free RAM
